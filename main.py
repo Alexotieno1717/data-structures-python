@@ -13,16 +13,12 @@ def make_readable(seconds):
     hours, remainder = divmod(seconds, 3600)
     minutes, sec = divmod(remainder, 60)
 
-    formatted_hours = str(hours).zfill(2)
-    formatted_minutes = str(minutes).zfill(2)
-    formatted_seconds = str(sec).zfill(2)
-
-    return f"{formatted_hours}:{formatted_minutes}:{formatted_seconds}"
+    return f"{hours:02d}:{minutes:02d}:{sec:02d}"
 
 
-seconds = 3661
+seconds = 359999
 formatted_time = make_readable(seconds)
-print(formatted_time)
+print(formatted_time)  # 99:59:59 final output
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
