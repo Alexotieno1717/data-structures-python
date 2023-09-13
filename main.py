@@ -7,16 +7,16 @@
 #
 # The maximum time never exceeds 359999 (99:59:59)
 def make_readable(seconds):
-    if seconds < 0 & seconds > 359999:
+    if seconds < 0 or seconds > 359999:
         return 'Invalid Input'
 
     hours, remainder = divmod(seconds, 3600)
     minutes, sec = divmod(remainder, 60)
 
-    return f"{hours:02d}:{minutes:02d}:{sec:02d}"
+    return '{:02}:{:02}:{:02}' . format(hours, minutes, sec)
 
 
-seconds = 359999
+seconds = 459999
 formatted_time = make_readable(seconds)
 print(formatted_time)  # 99:59:59 final output
 
